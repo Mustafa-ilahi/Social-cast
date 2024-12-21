@@ -13,7 +13,7 @@ import {images} from '../../services/utilities/images';
 import Button from '../../components/Button';
 import Modal from 'react-native-modal';
 
-export default function Login() {
+export default function Login({navigation}) {
   const [isModalVisible, setModalVisible] = useState(false);
 
   const toggleModal = () => {
@@ -43,7 +43,10 @@ export default function Login() {
       <View style={styles.btnContainer}>
         <Text style={styles.text}>
           FORGOT PASSWORD?{' '}
-          <TouchableOpacity style={{}}>
+          <TouchableOpacity style={{}}
+          onPress={() => navigation.navigate('ForgotPassword')}
+          
+          >
             <Text style={styles.linkText}>CLICK HERE</Text>
           </TouchableOpacity>
         </Text>
@@ -52,7 +55,11 @@ export default function Login() {
       <View style={styles.btnTop}>
         <Button title={'LOG IN WITH GOOGLE'} italic={true} onPress={toggleModal}/>
       </View>
-      <Button title={'CREATE NEW ACCOUNT'} italic={true} />
+      <Button title={'CREATE NEW ACCOUNT'} italic={true} 
+      
+      onPress={()=>navigation.navigate('Signup')}
+      
+      />
 
       <Image source={images.legends} style={styles.legends} />
 

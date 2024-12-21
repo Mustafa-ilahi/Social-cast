@@ -11,7 +11,7 @@ import Button from '../../components/Button';
 import {colors, fontSize, sizes} from '../../services';
 import {images} from '../../services/utilities/images';
 
-export default function ResetPassword() {
+export default function ResetPassword({navigation}) {
   return (
     <View style={styles.container}>
       <Text style={styles.head}>RESET YOUR PASSWORD?</Text>
@@ -28,7 +28,11 @@ export default function ResetPassword() {
         placeholderTextColor={colors.black}
       />
       <View style={styles.btnTop}>
-        <Button title={'CHANGED PASSWORD'} italic={true} />
+        <Button
+          title={'CHANGED PASSWORD'}
+          italic={true}
+          onPress={() => navigation.navigate('PasswordConfirmed')}
+        />
       </View>
 
       <Image source={images.legends} style={styles.legends} />

@@ -11,14 +11,17 @@ import Button from '../../components/Button';
 import {colors, fontSize, sizes} from '../../services';
 import {images} from '../../services/utilities/images';
 
-export default function PasswordConfirmed() {
+export default function PasswordConfirmed({navigation}) {
   return (
     <View style={styles.container}>
       <Text style={styles.head}>PASSWORD CONFIRMED</Text>
       <Text style={styles.content}>LETS TRY LOGIN TO YOUR ACCOUNT NOW</Text>
 
       <View style={styles.btnTop}>
-        <Button title={'LOG IN TO YOUR ACCOUNT'} italic={true} />
+        <Button title={'LOG IN TO YOUR ACCOUNT'} italic={true} 
+          onPress={()=>navigation.navigate('Login')}
+        
+        />
       </View>
 
       <Image source={images.legends} style={styles.legends} />

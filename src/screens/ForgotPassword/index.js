@@ -11,11 +11,11 @@ import {colors, fontSize, sizes} from '../../services';
 import {images} from '../../services/utilities/images';
 import Button from '../../components/Button';
 
-export default function ForgotPassword() {
+export default function ForgotPassword({navigation}) {
   return (
     <View style={styles.container}>
       <View style={styles.row}>
-        <TouchableOpacity>
+        <TouchableOpacity onPress={() => navigation.goBack()}>
           <Image source={images.arrowBack} style={styles.icon} />
         </TouchableOpacity>
         <Text style={styles.head}>FORGOT PASSWORD?</Text>
@@ -31,7 +31,13 @@ export default function ForgotPassword() {
         />
       </View>
       <View style={styles.btnTop}>
-        <Button title={'SEND OTP'} italic={true} />
+        <Button
+          title={'SEND OTP'}
+          italic={true}
+          onPress={() =>
+            navigation.navigate('OTPVerification', {forgotPass: true})
+          }
+        />
       </View>
 
       <Image source={images.legends} style={styles.legends} />

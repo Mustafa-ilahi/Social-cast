@@ -12,7 +12,7 @@ import {images} from '../../services/utilities/images';
 import {sizes} from '../../services';
 import Button from '../../components/Button';
 
-export default function Main() {
+export default function Main({navigation}) {
   return (
     <SafeAreaView style={styles.container}>
       <ImageBackground source={images.mainBg} style={styles.mainBg}>
@@ -22,7 +22,7 @@ export default function Main() {
           <View style={styles.btnTop}>
             <Button title={'CONTINUE WITH GOOGLE'} />
           </View>
-          <Button title={'CONTINUE WITH EMAIL'} />
+          <Button title={'CONTINUE WITH EMAIL'} onPress={()=>navigation.navigate("Signup")}/>
 
           <Image source={images.legends} style={styles.legends} />
 

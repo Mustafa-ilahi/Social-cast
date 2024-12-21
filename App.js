@@ -13,10 +13,10 @@ import ProfileOnboarding from './src/screens/ProfileOnboarding';
 
 export default function App() {
   return (
-    // <MainNavigator />
+    <MainNavigator />
 
     // <Main />
-    <Login />
+    // <Login />
     // <ResetPassword />
     // <PasswordConfirmed />
     // <OTPVerification />

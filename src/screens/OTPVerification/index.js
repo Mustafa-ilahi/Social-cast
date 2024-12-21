@@ -10,8 +10,11 @@ import {
 import {images} from '../../services/utilities/images';
 import Button from '../../components/Button';
 
-export default function OTPVerification() {
+export default function OTPVerification({navigation, route}) {
   const [value, setValue] = useState('');
+
+  const forgotPass = route?.params?.forgotPass;
+  console.log(forgotPass);
 
   const ref = useBlurOnFulfill({value, cellCount: CELL_COUNT});
   const [props, getCellOnLayoutHandler] = useClearByFocusCell({
@@ -57,7 +60,17 @@ export default function OTPVerification() {
       </View>
 
       <View style={styles.btnTop}>
-        <Button title={'CONFIRM CODE'} italic={true} />
+        <Button
+          title={'CONFIRM CODE'}
+          italic={true}
+          onPress={() => {
+            navigation.navigate(
+              forgotPass ?
+               'ResetPassword' 
+              : 'ProfileOnboarding',
+            );
+          }}
+        />
       </View>
 
       <Image source={images.legends} style={styles.legends} />

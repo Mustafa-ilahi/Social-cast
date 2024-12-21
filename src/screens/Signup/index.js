@@ -12,12 +12,15 @@ import {images} from '../../services/utilities/images';
 import {colors, fontSize, sizes} from '../../services';
 import Button from '../../components/Button';
 
-export default function Signup() {
+export default function Signup({navigation}) {
   return (
     <ScrollView style={styles.container}>
       <View>
         <View style={styles.row}>
-          <TouchableOpacity>
+          <TouchableOpacity
+          
+          onPress={() => navigation.goBack()}
+          >
             <Image source={images.arrowBack} style={styles.icon} />
           </TouchableOpacity>
           <Text style={styles.head}>GET A SOCIALCAST ACCOUNT</Text>
@@ -51,12 +54,20 @@ export default function Signup() {
       </View>
 
       <View style={styles.btnTop}>
-        <Button title={'SIGN UP FREE!!'} italic={true} />
+        <Button
+          title={'SIGN UP FREE!!'}
+          italic={true}
+          onPress={() => navigation.navigate('OTPVerification')}
+        />
       </View>
       <View style={styles.btnContainer}>
         <Text style={styles.text}>
           ALREADY HAVE ACCOUNT?{' '}
-          <TouchableOpacity style={{}}>
+          <TouchableOpacity 
+          
+          onPress={() => navigation.navigate('Login')}
+          
+          style={{}}>
             <Text style={styles.linkText}>CLICK HERE</Text>
           </TouchableOpacity>
         </Text>
@@ -121,7 +132,7 @@ const styles = StyleSheet.create({
   btnContainer: {
     justifyContent: 'center',
     alignItems: 'center',
-    marginTop:sizes.screenHeight*0.01
+    marginTop: sizes.screenHeight * 0.01,
   },
   text: {
     fontSize: 16,

@@ -16,13 +16,13 @@ export default function App() {
     // <MainNavigator />
 
     // <Main />
-    // <Login />
+    <Login />
     // <ResetPassword />
     // <PasswordConfirmed />
     // <OTPVerification />
     // <ForgotPassword />
     // <Signup />
-    <ProfileOnboarding />
+    // <ProfileOnboarding />
   );
 }
 

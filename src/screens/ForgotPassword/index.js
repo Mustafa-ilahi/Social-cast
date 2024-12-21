@@ -59,9 +59,9 @@ const styles = StyleSheet.create({
   head: {
     color: colors.black,
     fontWeight: '700',
-    fontSize: fontSize.h4,
+    fontSize: fontSize.h5,
     fontStyle: 'italic',
-    marginLeft: sizes.screenWidth * 0.1, // Space between the icon and text
+    marginLeft: sizes.screenWidth * 0.15, // Space between the icon and text
   },
 
   content: {

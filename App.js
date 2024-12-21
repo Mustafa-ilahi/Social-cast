@@ -8,6 +8,7 @@ import PasswordConfirmed from './src/screens/PasswordConfirmed';
 import MainNavigator from './src/services/config/navigation';
 import OTPVerification from './src/screens/OTPVerification';
 import ForgotPassword from './src/screens/ForgotPassword';
+import Signup from './src/screens/Signup';
 
 export default function App() {
   return (
@@ -17,9 +18,9 @@ export default function App() {
     // <Login />
     // <ResetPassword />
     // <PasswordConfirmed />
-
     // <OTPVerification />
-    <ForgotPassword />
+    // <ForgotPassword />
+    <Signup />
   );
 }
 

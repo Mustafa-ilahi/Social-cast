@@ -8,15 +8,17 @@ import {
 } from 'react-native';
 import {colors, fontSize, sizes} from '../../services';
 
-const ProfileOnboarding = () => {
+const ProfileOnboarding = ({navigation}) => {
   const [bio, setBio] = useState('');
 
   const handleSave = () => {
     console.log('Bio Saved:', bio);
+    navigation.goBack();
   };
 
   const handleClose = () => {
     console.log('Onboarding Closed');
+    navigation.goBack();
   };
 
   return (
@@ -75,7 +77,6 @@ const styles = StyleSheet.create({
     alignSelf: 'center',
     paddingBottom: sizes.screenHeight * 0.01,
     fontStyle: 'italic',
-    
   },
   card: {
     width: sizes.screenWidth * 0.93,
@@ -83,7 +84,7 @@ const styles = StyleSheet.create({
     borderColor: 'black',
     backgroundColor: colors.greenBg,
     alignItems: 'center',
-    marginBottom: 30, 
+    marginBottom: 30,
   },
   subtitle: {
     fontSize: 18,
@@ -93,35 +94,34 @@ const styles = StyleSheet.create({
     borderBottomWidth: 1,
     borderColor: 'black',
     padding: 5,
-    width: '100%', 
+    width: '100%',
     fontStyle: 'italic',
-
   },
   inputContainer: {
     width: '100%',
-    backgroundColor: colors.greenBg, 
+    backgroundColor: colors.greenBg,
     padding: 10,
   },
   textInput: {
     fontSize: 16,
     height: sizes.screenHeight * 0.35,
-    textAlignVertical: 'top', 
+    textAlignVertical: 'top',
     color: 'black',
   },
   buttonContainer: {
     flexDirection: 'row',
     justifyContent: 'space-between',
     width: '100%',
-    borderTopWidth:1,
-    padding:sizes.screenHeight*0.01
+    borderTopWidth: 1,
+    padding: sizes.screenHeight * 0.01,
   },
   button: {
     width: '35%',
     height: 40,
-    borderRadius: sizes.screenHeight*0.03,
+    borderRadius: sizes.screenHeight * 0.03,
     justifyContent: 'center',
     alignItems: 'center',
-    borderWidth:1
+    borderWidth: 1,
   },
   closeButton: {
     backgroundColor: '#FF0000',
@@ -133,7 +133,7 @@ const styles = StyleSheet.create({
     fontSize: 16,
     fontWeight: '700',
     color: 'black',
-    fontStyle:'italic'
+    fontStyle: 'italic',
   },
 });
 

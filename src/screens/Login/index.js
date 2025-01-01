@@ -43,22 +43,25 @@ export default function Login({navigation}) {
       <View style={styles.btnContainer}>
         <Text style={styles.text}>
           FORGOT PASSWORD?{' '}
-          <TouchableOpacity style={{}}
-          onPress={() => navigation.navigate('ForgotPassword')}
-          
-          >
+          <TouchableOpacity
+            style={{}}
+            onPress={() => navigation.navigate('ForgotPassword')}>
             <Text style={styles.linkText}>CLICK HERE</Text>
           </TouchableOpacity>
         </Text>
       </View>
 
       <View style={styles.btnTop}>
-        <Button title={'LOG IN WITH GOOGLE'} italic={true} onPress={toggleModal}/>
+        <Button
+          title={'LOG IN WITH GOOGLE'}
+          italic={true}
+          onPress={toggleModal}
+        />
       </View>
-      <Button title={'CREATE NEW ACCOUNT'} italic={true} 
-      
-      onPress={()=>navigation.navigate('Signup')}
-      
+      <Button
+        title={'CREATE NEW ACCOUNT'}
+        italic={true}
+        onPress={() => navigation.navigate('Signup')}
       />
 
       <Image source={images.legends} style={styles.legends} />
@@ -174,12 +177,11 @@ const styles = StyleSheet.create({
   },
   closeButton: {
     backgroundColor: colors.disabledBg,
-    right:sizes.screenWidth*0.01
+    right: sizes.screenWidth * 0.01,
   },
   saveButton: {
     backgroundColor: colors.disabledBg, // Bright green for Save button
-    left:sizes.screenWidth*0.01
- 
+    left: sizes.screenWidth * 0.01,
   },
   buttonText: {
     fontSize: 12,
